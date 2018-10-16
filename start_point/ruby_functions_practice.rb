@@ -1,5 +1,7 @@
 # SK - put these at the start to avoid conflicts
 
+require 'Date'
+
 def volume_of_cube(side)
   return side ** 3.0
 end
@@ -45,4 +47,13 @@ end
 
 def divide(num1, num2)
   return num1.to_f / num2.to_f
+end
+
+def number_to_full_month_name(month)
+  # see https://stackoverflow.com/a/4844276/5158630
+  return Date::MONTHNAMES[month]
+end
+
+def number_to_short_month_name(month)
+  return Date::ABBR_MONTHNAMES[month]
 end
