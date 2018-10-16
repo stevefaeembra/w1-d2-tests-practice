@@ -1,3 +1,20 @@
+# SK - put these at the start to avoid conflicts
+
+def volume_of_cube(side)
+  return side ** 3.0
+end
+
+def volume_of_sphere(radius)
+  # source http://www.bbc.co.uk/bitesize/intermediate2/mathematics/mathematics_1/volume/revision/1/
+  # TODO: work out how to use proper Math.PI constant!
+  return (4.0/3.0)*Math::PI*(radius**3)
+end
+
+def farenheit_to_celsius(old_money)
+  # source https://www.rapidtables.com/convert/temperature/fahrenheit-to-celsius.html
+  return (old_money-32.0)*(5.0/9.0)
+end
+
 def return_10
   return 10
 end

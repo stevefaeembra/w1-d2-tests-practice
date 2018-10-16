@@ -46,7 +46,7 @@ class FunctionsTest < MiniTest::Test
     add_result = add_string_as_number( "1", "2" )
     assert_equal( 3, add_result )
   end
-  
+
   #
   # def test_number_to_full_name__month_1()
   #   result = number_to_full_month_name( 1 )
@@ -79,21 +79,22 @@ class FunctionsTest < MiniTest::Test
   # end
   #
   # #Further
-  #
-  # #Given the length of a side of a cube calculate the volume
-  # def test_volume_of_cube()
-  #   #add test code here
-  # end
-  #
-  # #Given the radius of a sphere calculate the volume
-  # def test_volume_of_sphere()
-  #   #add test code here
-  # end
-  #
-  # #Given a value in farenheit, convert this into celsius.
-  # def test_fahrenheit_to_celsius()
-  #   #add test code here
-  # end
-  #
+
+  # Given the length of a side of a cube calculate the volume
+  def test_volume_of_cube()
+    assert_equal(1000.0,volume_of_cube(10.0))
+  end
+
+  # Given the radius of a sphere calculate the volume
+  # Sanity checked at http://www.smartconversion.com/unit_calculation/Volume_of_a_Sphere.aspx
+  def test_volume_of_sphere()
+    assert_equal(4.1887902, volume_of_sphere(1.0).round(7))
+  end
+
+  # Given a value in farenheit, convert this into celsius.
+  # rounds to 5 decimal places
+  def test_farenheit_to_celsius()
+    assert_equal(-17.77778, farenheit_to_celsius(0.0).round(5))
+  end
 
 end
