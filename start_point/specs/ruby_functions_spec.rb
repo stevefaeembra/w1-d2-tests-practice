@@ -1,6 +1,7 @@
 require( 'minitest/autorun' )
 require( 'minitest/rg' )
 require_relative( '../ruby_functions_practice' )
+require_relative( '../utilities')
 
 class FunctionsTest < MiniTest::Test
 
@@ -88,13 +89,20 @@ class FunctionsTest < MiniTest::Test
   # Given the radius of a sphere calculate the volume
   # Sanity checked at http://www.smartconversion.com/unit_calculation/Volume_of_a_Sphere.aspx
   def test_volume_of_sphere()
-    assert_equal(4.1887902, volume_of_sphere(1.0).round(7))
+    assert_nearly_equal_to(4.1887902, volume_of_sphere(1.0), 7)
   end
 
   # Given a value in farenheit, convert this into celsius.
   # rounds to 5 decimal places
   def test_farenheit_to_celsius()
-    assert_equal(-17.77778, farenheit_to_celsius(0.0).round(5))
+    assert_nearly_equal_to(-17.77778, farenheit_to_celsius(0.0), 5)
+  end
+
+  def test_assert_nearly_equal_to()
+    // tests nearly-equal-to function
+    assert_nearly_equal_to(1.0, 1.1, 0)
+    assert_nearly_equal_to(1.001, 1.0014, 3)
+    assert_nearly_equal_to(1.001, 1.0015, 2) # 1.0015 rounded up 1.002 at 3dp
   end
 
 end

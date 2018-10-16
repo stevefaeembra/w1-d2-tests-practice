@@ -8,8 +8,7 @@ end
 
 def volume_of_sphere(radius)
   # source http://www.bbc.co.uk/bitesize/intermediate2/mathematics/mathematics_1/volume/revision/1/
-  # TODO: work out how to use proper Math.PI constant!
-  return (4.0/3.0)*Math::PI*(radius**3)
+  return (4.0/3.0) * Math::PI * (radius**3)
 end
 
 def farenheit_to_celsius(old_money)
